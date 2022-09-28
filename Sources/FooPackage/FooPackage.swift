@@ -10,7 +10,7 @@ public struct FooPackage {
      
         client.setEndpoint(endpoint).setProject(projId)
         
-        account.createSession(email: email, password: pw, completion: completion)
+//        account.createSession(email: email, password: pw, completion: completion)
         
     }
 }
