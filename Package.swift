@@ -5,6 +5,10 @@ import PackageDescription
 
 let package = Package(
     name: "FooPackage",
+    platforms: [
+        .iOS(.v15),
+        .macOS(.v12),
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -14,10 +18,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-
-        // warning: 'package(name:url:from:)' is deprecated: use package(url:from:) instead
-        // .package(name: "Appwrite", url: "https://github.com/appwrite/sdk-for-swift", from: "0.1.0")
-        .package(url: "https://github.com/appwrite/sdk-for-swift", from: "0.1.0")
+        .package(url: "https://github.com/appwrite/sdk-for-swift", from: "0.1.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -25,7 +26,7 @@ let package = Package(
         .target(
             name: "FooPackage",
             dependencies: [
-                .product(name: "Appwrite", package: "sdk-for-swift")
+                .product(name: "Appwrite", package: "sdk-for-swift"),
             ]),
         .testTarget(
             name: "FooPackageTests",
