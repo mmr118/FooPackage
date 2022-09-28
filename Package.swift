@@ -25,7 +25,7 @@ let package = Package(
         .target(
             name: "FooPackage",
             dependencies: [
-                "Appwrite"
+                .product(name: "Appwrite", package: "sdk-for-swift")
             ]),
         .testTarget(
             name: "FooPackageTests",
